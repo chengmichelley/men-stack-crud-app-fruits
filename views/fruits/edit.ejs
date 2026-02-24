@@ -9,25 +9,30 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <h1>Editing the <% fruit.name %></h1>
-        <form action="/fruits/<% fruit._id %>/?_method= PUT" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required value="<% fruit.name %>"/>
+        <h1>Editing the <%= fruit.name %>
+        </h1>
+        <% if(typeof(message) !=="undefined" ) { %>
+            <strong><em>
+                    <%= message %>
+                </em></strong>
+            <% }%>
+<form action="/fruits/<%= fruit._id %>?_method=PUT" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required value="<%= fruit.name %>" />
 
-            <label for="description">description:</label>
-            <textarea placeholder="Please enter a description 100 chars or less" maxlength="100" type="text"
-                id="description" name="description" required><% fruit.name %></textarea>
+                    <label for="description">description:</label>
+                    <textarea placeholder="Please enter a description 100 chars or less" maxlength="100" type="text"
+                        id="description" name="description" required><%= fruit.description %></textarea>
 
-            <label for="isReadyToEat">
-                Ready To Eat
-            </label>
-            <input type="checkbox" id="isReadyToEat" name="isReadyToEat" <% if(fruit.isReadyToEat){ %>checked <% } %> />
+                    <label for="isReadyToEat"> Ready To Eat </label>
+                    <input type="checkbox" id="isReadyToEat" name="isReadyToEat" <% if(fruit.isReadyToEat){ %>checked <%
+                        } %> />
 
-            <label for="color"> Color</label>
-            <input type="text" id="color" name="color" required value = "<% fruit.name %>"/>
+                        <label for="color"> Color</label>
+                        <input type="text" id="color" name="color" required value="<%= fruit.color  %>" />
 
-            <button type="submit">Add Fruit</button>
-        </form>
+                        <button type="submit">Edit Fruit</button>
+                </form>
 </body>
 
 </html>

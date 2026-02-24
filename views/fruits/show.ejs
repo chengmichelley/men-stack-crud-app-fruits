@@ -10,7 +10,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1 style="font-weight: bold;">
-        The <em style="color: red;"><%= fruit.name %></em>Page</h1>
+        The <em style="color: red;"><%= fruit.name %></em> Page</h1>
         <p>
             <%= isReadyToEatMessage %>
         </p>
@@ -18,6 +18,9 @@
         <p>
             <%= fruit.description%>
         </p>
+        <a href="/fruits/<%= fruit._id %>/edit">
+            <button> Edit <%= fruit.name %> </button>
+        </a>
         
         <a href="/fruits/<%= fruit._id %>/confirm_delete">
             <button type="submit"> Delete <%= fruit.name %> </button>
