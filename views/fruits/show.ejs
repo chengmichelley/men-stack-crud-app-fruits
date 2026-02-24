@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The <%= fruit.name %> Page</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1 style="font-weight: bold;">
+        The <em style="color: red;"><%= fruit.name %></em>Page</h1>
+        <p>
+            <%= isReadyToEatMessage %>
+        </p>
+
+        <p>
+            <%= fruit.description%>
+        </p>
+        
+        <a href="/fruits/<%= fruit._id %>/confirm_delete">
+            <button type="submit"> Delete <%= fruit.name %> </button>
+        </a>
+        
+        <form action="/fruits/<%= fruit._id %>/soft?_method=DELETE" method="POST">
+            <button type="submit">Soft Delete <%= fruit.name %> </button>
+        </form>
+        
+        <button onclick="window.history.back()">Go Back</button>
+        </body>
+        
+        </html>

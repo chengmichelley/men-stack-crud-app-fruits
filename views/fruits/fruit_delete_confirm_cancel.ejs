@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+        <h1>Are you Sure you want to delete the <%= fruit.name %>
+        </h1>
+
+        <form action="/fruits/<%= fruit._id %>/?_method=DELETE" method="POST">
+            <button type="submit">Confirm Delete <%= fruit.name %> </button>
+        </form>
+
+        <a href="/fruits/<%= fruit._id %>">Cancel and Go Back</a>
+
+
+</body>
+
+</html>

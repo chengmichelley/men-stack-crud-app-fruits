@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editing A fruit</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Editing the <% fruit.name %></h1>
+        <form action="/fruits/<% fruit._id %>/?_method= PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required value="<% fruit.name %>"/>
+
+            <label for="description">description:</label>
+            <textarea placeholder="Please enter a description 100 chars or less" maxlength="100" type="text"
+                id="description" name="description" required><% fruit.name %></textarea>
+
+            <label for="isReadyToEat">
+                Ready To Eat
+            </label>
+            <input type="checkbox" id="isReadyToEat" name="isReadyToEat" <% if(fruit.isReadyToEat){ %>checked <% } %> />
+
+            <label for="color"> Color</label>
+            <input type="text" id="color" name="color" required value = "<% fruit.name %>"/>
+
+            <button type="submit">Add Fruit</button>
+        </form>
+</body>
+
+</html>

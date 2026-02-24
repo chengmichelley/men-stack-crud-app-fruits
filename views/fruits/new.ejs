@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add A fruit</title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Create a Fruit</h1>
+        <form action="/fruits" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="description">description:</label>
+            <textarea placeholder="Please enter a description 100 chars or less" maxlength="100" type="text"
+                id="description" name="description" required>
+      </textarea>
+
+            <label for="isReadyToEat">
+                Ready To Eat
+            </label>
+            <input type="checkbox" id="isReadyToEat" name="isReadyToEat" />
+
+            <label for="color"> Color</label>
+            <input type="text" id="color" name="color" required />
+
+            <button type="submit">Add Fruit</button>
+        </form>
+</body>
+
+</html>
